@@ -8,14 +8,26 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
+    var mLocationManager = CLLocationManager()
+    
     @IBOutlet weak var mMap: MKMapView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mLocationManager.delegate = self
+        mLocationManager.desiredAccuracy = kCLLocationAccuracyBest
+        mLocationManager.requestAlwaysAuthorization()
+        mLocationManager.startUpdatingLocation()
+        
+        
+        
+        
         //36.722559, -4.417289
         
         var mLatitude:CLLocationDegrees = 36.722559
@@ -71,6 +83,33 @@ class ViewController: UIViewController {
         mMap.addAnnotation(mAnnotation)
         
         
+        
+    }
+    
+    //To use the User's Location
+    
+    //Comment this Block to check the use of pins
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print(locations)
+        
+        var mUserLocation: CLLocation = locations[0] as! CLLocation
+        
+        var mLatitude:CLLocationDegrees = mUserLocation.coordinate.latitude
+        
+        var mLongitude:CLLocationDegrees = mUserLocation.coordinate.longitude
+        
+        var mLatDelta:CLLocationDegrees = 0.03
+        
+        var mLongDelta:CLLocationDegrees = 0.03
+        
+        var mSpan:MKCoordinateSpan = MKCoordinateSpanMake(mLatDelta, mLongDelta)
+        
+        var mLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(mLatitude, mLongitude)
+        
+        var mRegion:MKCoordinateRegion = MKCoordinateRegionMake(mLocation, mSpan)
+        
+        self.mMap.setRegion(mRegion, animated: true)
         
     }
     

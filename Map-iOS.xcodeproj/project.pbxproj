@@ -12,6 +12,7 @@
 		A9385C931BF9DEAE00BB4738 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9385C911BF9DEAE00BB4738 /* Main.storyboard */; };
 		A9385C951BF9DEAE00BB4738 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9385C941BF9DEAE00BB4738 /* Assets.xcassets */; };
 		A9385C981BF9DEAE00BB4738 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9385C961BF9DEAE00BB4738 /* LaunchScreen.storyboard */; };
+		A98DAF131BF9FFDC000FF76B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98DAF121BF9FFDC000FF76B /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		A9385C941BF9DEAE00BB4738 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9385C971BF9DEAE00BB4738 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9385C991BF9DEAE00BB4738 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A98DAF121BF9FFDC000FF76B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A98DAF131BF9FFDC000FF76B /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +41,7 @@
 		A9385C811BF9DEAE00BB4738 = {
 			isa = PBXGroup;
 			children = (
+				A98DAF121BF9FFDC000FF76B /* CoreLocation.framework */,
 				A9385C8C1BF9DEAE00BB4738 /* Map-iOS */,
 				A9385C8B1BF9DEAE00BB4738 /* Products */,
 			);
@@ -284,6 +288,7 @@
 				A9385C9E1BF9DEAE00BB4738 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
